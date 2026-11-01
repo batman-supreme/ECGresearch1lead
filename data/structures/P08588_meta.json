@@ -1,0 +1,11 @@
+{
+  "entryId": "AF-P08588-F1",
+  "gene": "ADRB1",
+  "uniprotAccession": "P08588",
+  "uniprotDescription": "Beta-1 adrenergic receptor",
+  "taxId": 9606,
+  "organismScientificName": "Homo sapiens",
+  "pdbUrl": "https://alphafold.ebi.ac.uk/files/AF-P08588-F1-model_v6.pdb",
+  "paeDocUrl": "https://alphafold.ebi.ac.uk/files/AF-P08588-F1-predicted_aligned_error_v6.json",
+  "disclaimer": "Research use only, not for clinical decisions."
+}

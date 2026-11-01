@@ -1,0 +1,11 @@
+{
+  "entryId": "AF-Q14524-F1",
+  "gene": "SCN5A",
+  "uniprotAccession": "Q14524",
+  "uniprotDescription": "Sodium channel protein type 5 subunit alpha",
+  "taxId": 9606,
+  "organismScientificName": "Homo sapiens",
+  "pdbUrl": "https://alphafold.ebi.ac.uk/files/AF-Q14524-F1-model_v6.pdb",
+  "paeDocUrl": "https://alphafold.ebi.ac.uk/files/AF-Q14524-F1-predicted_aligned_error_v6.json",
+  "disclaimer": "Research use only, not for clinical decisions."
+}

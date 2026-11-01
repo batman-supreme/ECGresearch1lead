@@ -1,0 +1,653 @@
+{
+  "disclaimer": "Research use only, not for clinical decisions.",
+  "metadata": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "run_id": "run_quick_test_20261009_170859_d89f9037",
+    "timestamp_utc": "2026-10-09T17:08:59.264763Z",
+    "execution_duration_sec": 0.047,
+    "model_checkpoint": "D:\\ECG-AI-Research-1Lead\\checkpoints\\best_model.pt",
+    "input_source": "memory_array"
+  },
+  "ecg_inference": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "probabilities": {
+      "NORM": 0.01065,
+      "MI": 0.5636,
+      "STTC": 0.33817,
+      "CD": 0.1095,
+      "HYP": 0.02026
+    },
+    "predictions": {
+      "NORM": false,
+      "MI": true,
+      "STTC": true,
+      "CD": false,
+      "HYP": false
+    },
+    "detected_conditions": [
+      "MI",
+      "STTC"
+    ],
+    "thresholds": {
+      "NORM": 0.5,
+      "MI": 0.3,
+      "STTC": 0.3,
+      "CD": 0.35,
+      "HYP": 0.25
+    },
+    "sampling_rate": 500,
+    "signal_length": 5000,
+    "device": "cuda",
+    "timestamp": "2026-10-09T17:08:59.273016Z",
+    "metadata": {}
+  },
+  "analytics": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "composite_risk_score": 52.2,
+    "composite_risk_tier": "High",
+    "condition_risks": {
+      "NORM": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "NORM",
+        "probability": 0.01065,
+        "risk_score": 98.94,
+        "risk_tier": "Critical",
+        "confidence_interval": [
+          0.0047,
+          0.0241
+        ],
+        "contributing_factors": [
+          "Loss of normal sinus baseline morphology"
+        ]
+      },
+      "MI": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "MI",
+        "probability": 0.5636,
+        "risk_score": 72.89,
+        "risk_tier": "High",
+        "confidence_interval": [
+          0.5198,
+          0.6064
+        ],
+        "contributing_factors": [
+          "Loss of anterior/lateral R-wave progression",
+          "Pathological Q-waves or acute terminal ST-elevation vector",
+          "Heightened vulnerability to post-infarction ventricular arrhythmias"
+        ]
+      },
+      "STTC": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "STTC",
+        "probability": 0.33817,
+        "risk_score": 54.88,
+        "risk_tier": "High",
+        "confidence_interval": [
+          0.2981,
+          0.3807
+        ],
+        "contributing_factors": [
+          "ST-segment horizontal/downsloping depression or symmetric T-wave inversion",
+          "Impaired potassium channel repolarization reserve (IKr/hERG vulnerability)",
+          "Underlying ischemic coronary insufficiency or myocardial strain"
+        ]
+      },
+      "CD": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "CD",
+        "probability": 0.1095,
+        "risk_score": 12.4,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.085,
+          0.1399
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Conduction Disturbance (prob: 0.110 < thresh: 0.35)"
+        ]
+      },
+      "HYP": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "HYP",
+        "probability": 0.02026,
+        "risk_score": 2.45,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0111,
+          0.0368
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Ventricular Hypertrophy (prob: 0.020 < thresh: 0.25)"
+        ]
+      }
+    },
+    "explainability": null,
+    "summary_notes": [
+      "Elevated risk flags detected: MI, STTC",
+      "Multi-morbidity interaction detected: co-occurrence of MI, STTC elevates composite risk to High"
+    ]
+  },
+  "bridge": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "queried_conditions": [
+      "MI",
+      "STTC"
+    ],
+    "resolved_targets": [
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "ADRB1",
+        "uniprot_id": "P08588",
+        "name": "Beta-1 adrenergic receptor",
+        "organism": "Homo sapiens",
+        "role": "Primary adrenergic GPCR mediator of sympathetic inotropy and chronotropy; target for post-MI cardioprotection.",
+        "pathway": "Adrenergic signaling in cardiomyocytes",
+        "priority": 1
+      },
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "KCNH2",
+        "uniprot_id": "Q12809",
+        "name": "Potassium voltage-gated channel subfamily H member 2 (hERG)",
+        "organism": "Homo sapiens",
+        "role": "Mediates rapid delayed rectifier potassium current (IKr); principal determinant of ventricular repolarization and QT interval.",
+        "pathway": "Potassium channel repolarization",
+        "priority": 1
+      },
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "SCN5A",
+        "uniprot_id": "Q14524",
+        "name": "Sodium voltage-gated channel alpha subunit 5",
+        "organism": "Homo sapiens",
+        "role": "Cardiac Nav1.5 channel mediating fast depolarizing sodium current; critical in post-infarction arrhythmogenesis.",
+        "pathway": "Cardiac conduction and cardiac action potential",
+        "priority": 2
+      },
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "ADRB2",
+        "uniprot_id": "P07550",
+        "name": "Beta-2 adrenergic receptor",
+        "organism": "Homo sapiens",
+        "role": "Mediates coronary vasodilation, metabolic regulation, and cardioprotective signaling during ischemic strain.",
+        "pathway": "Adrenergic signaling in cardiomyocytes",
+        "priority": 2
+      },
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "CACNA1C",
+        "uniprot_id": "Q13936",
+        "name": "Voltage-dependent L-type calcium channel subunit alpha-1C",
+        "organism": "Homo sapiens",
+        "role": "Mediator of Cav1.2 inward calcium current; key player in excitation-contraction coupling and ischemic calcium overload.",
+        "pathway": "Calcium signaling pathway",
+        "priority": 3
+      },
+      {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "gene": "NOS3",
+        "uniprot_id": "P29474",
+        "name": "Endothelial nitric oxide synthase",
+        "organism": "Homo sapiens",
+        "role": "Produces nitric oxide regulating coronary vascular tone, endothelial integrity, and ischemic preconditioning.",
+        "pathway": "Nitric oxide / cGMP signaling",
+        "priority": 4
+      }
+    ],
+    "uniprot_ids": [
+      "P08588",
+      "Q12809",
+      "Q14524",
+      "P07550",
+      "Q13936",
+      "P29474"
+    ],
+    "source_file": "D:\\ECG-AI-Research-1Lead\\configs\\targets.yaml"
+  },
+  "protein_structures": [
+    {
+      "disclaimer": "Research use only, not for clinical decisions.",
+      "uniprot_id": "P08588",
+      "gene_symbol": "ADRB1",
+      "protein_name": "Beta-1 adrenergic receptor",
+      "structure_file_path": "D:\\ECG-AI-Research-1Lead\\data\\structures\\P08588_AF.pdb",
+      "cached_locally": true,
+      "plddt_summary": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "mean_plddt": 75.33,
+        "very_high_plddt_pct": 49.9,
+        "confident_plddt_pct": 13.84,
+        "low_plddt_pct": 10.06,
+        "very_low_plddt_pct": 26.21,
+        "passes_qc": true
+      },
+      "detected_pockets": [
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "pocket_id": 2,
+          "center_x": 7.072,
+          "center_y": 1.701,
+          "center_z": -9.272,
+          "box_size_x": 20.0,
+          "box_size_y": 20.0,
+          "box_size_z": 20.0,
+          "druggability_score": 0.73,
+          "residue_indices": [
+            57,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116
+          ],
+          "description": "Secondary allosteric modulation pocket"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "pocket_id": 1,
+          "center_x": -5.084,
+          "center_y": 1.444,
+          "center_z": -2.54,
+          "box_size_x": 20.0,
+          "box_size_y": 20.0,
+          "box_size_z": 20.0,
+          "druggability_score": 0.69,
+          "residue_indices": [
+            65,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103
+          ],
+          "description": "Primary orthosteric binding cavity / transmembrane pore cleft"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "pocket_id": 3,
+          "center_x": 0.905,
+          "center_y": 3.522,
+          "center_z": -15.2,
+          "box_size_x": 20.0,
+          "box_size_y": 20.0,
+          "box_size_z": 20.0,
+          "druggability_score": 0.52,
+          "residue_indices": [
+            106,
+            107,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131
+          ],
+          "description": "Accessory vestibular cavity"
+        }
+      ],
+      "selected_pocket": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "pocket_id": 2,
+        "center_x": 7.072,
+        "center_y": 1.701,
+        "center_z": -9.272,
+        "box_size_x": 20.0,
+        "box_size_y": 20.0,
+        "box_size_z": 20.0,
+        "druggability_score": 0.73,
+        "residue_indices": [
+          57,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116
+        ],
+        "description": "Secondary allosteric modulation pocket"
+      },
+      "sequence_length": 477
+    }
+  ],
+  "drug_screenings": [
+    {
+      "disclaimer": "Research use only, not for clinical decisions.",
+      "target_gene": "ADRB1",
+      "target_uniprot_id": "P08588",
+      "total_ligands_evaluated": 4,
+      "candidates_passing_filters": 4,
+      "ranked_candidates": [
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "compound_id": "DRUG-ADRB1-02",
+          "name": "Atenolol",
+          "smiles": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+          "target_gene": "ADRB1",
+          "target_uniprot_id": "P08588",
+          "pocket_id": 2,
+          "binding_affinity_kcal_mol": -12.5,
+          "poses": [
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 1,
+              "affinity_kcal_mol": -12.5,
+              "rmsd_lower_bound": 0.0,
+              "rmsd_upper_bound": 0.0
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 2,
+              "affinity_kcal_mol": -11.79,
+              "rmsd_lower_bound": 1.2,
+              "rmsd_upper_bound": 2.6
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 3,
+              "affinity_kcal_mol": -11.17,
+              "rmsd_lower_bound": 2.4,
+              "rmsd_upper_bound": 3.8
+            }
+          ],
+          "admet": {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "molecular_weight": 270.37,
+            "logP": 1.37,
+            "h_bond_donors": 3,
+            "h_bond_acceptors": 5,
+            "tpsa": 82.5,
+            "rotatable_bonds": 2,
+            "lipinski_violations": 0,
+            "passes_lipinski": true,
+            "herg_inhibition_probability": 0.35,
+            "herg_risk_tier": "Moderate",
+            "passes_cardiac_safety": true
+          },
+          "composite_score": 91.25,
+          "rank": 1
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "compound_id": "DRUG-ADRB1-01",
+          "name": "Metoprolol",
+          "smiles": "CC(C)NCC(O)COc1ccc(CCOCC)cc1",
+          "target_gene": "ADRB1",
+          "target_uniprot_id": "P08588",
+          "pocket_id": 2,
+          "binding_affinity_kcal_mol": -12.5,
+          "poses": [
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 1,
+              "affinity_kcal_mol": -12.5,
+              "rmsd_lower_bound": 0.0,
+              "rmsd_upper_bound": 0.0
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 2,
+              "affinity_kcal_mol": -11.79,
+              "rmsd_lower_bound": 1.2,
+              "rmsd_upper_bound": 2.6
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 3,
+              "affinity_kcal_mol": -11.17,
+              "rmsd_lower_bound": 2.4,
+              "rmsd_upper_bound": 3.8
+            }
+          ],
+          "admet": {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "molecular_weight": 282.4,
+            "logP": 2.68,
+            "h_bond_donors": 3,
+            "h_bond_acceptors": 4,
+            "tpsa": 67.5,
+            "rotatable_bonds": 3,
+            "lipinski_violations": 0,
+            "passes_lipinski": true,
+            "herg_inhibition_probability": 0.5,
+            "herg_risk_tier": "Moderate",
+            "passes_cardiac_safety": false
+          },
+          "composite_score": 43.75,
+          "rank": 2
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "compound_id": "DRUG-ADRB1-03",
+          "name": "Bisoprolol",
+          "smiles": "CC(C)NCC(O)COc1ccc(COCCOC(C)C)cc1",
+          "target_gene": "ADRB1",
+          "target_uniprot_id": "P08588",
+          "pocket_id": 2,
+          "binding_affinity_kcal_mol": -12.5,
+          "poses": [
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 1,
+              "affinity_kcal_mol": -12.5,
+              "rmsd_lower_bound": 0.0,
+              "rmsd_upper_bound": 0.0
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 2,
+              "affinity_kcal_mol": -11.79,
+              "rmsd_lower_bound": 1.2,
+              "rmsd_upper_bound": 2.6
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 3,
+              "affinity_kcal_mol": -11.17,
+              "rmsd_lower_bound": 2.4,
+              "rmsd_upper_bound": 3.8
+            }
+          ],
+          "admet": {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "molecular_weight": 326.46,
+            "logP": 2.59,
+            "h_bond_donors": 4,
+            "h_bond_acceptors": 5,
+            "tpsa": 85.0,
+            "rotatable_bonds": 4,
+            "lipinski_violations": 0,
+            "passes_lipinski": true,
+            "herg_inhibition_probability": 0.5,
+            "herg_risk_tier": "Moderate",
+            "passes_cardiac_safety": false
+          },
+          "composite_score": 43.75,
+          "rank": 3
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "compound_id": "DRUG-ADRB1-04",
+          "name": "Carvedilol",
+          "smiles": "COc1cccc2c1c3ccccc3n2CC(O)CNCCOc4ccccc4",
+          "target_gene": "ADRB1",
+          "target_uniprot_id": "P08588",
+          "pocket_id": 2,
+          "binding_affinity_kcal_mol": -12.5,
+          "poses": [
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 1,
+              "affinity_kcal_mol": -12.5,
+              "rmsd_lower_bound": 0.0,
+              "rmsd_upper_bound": 0.0
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 2,
+              "affinity_kcal_mol": -11.79,
+              "rmsd_lower_bound": 1.2,
+              "rmsd_upper_bound": 2.6
+            },
+            {
+              "disclaimer": "Research use only, not for clinical decisions.",
+              "mode": 3,
+              "affinity_kcal_mol": -11.17,
+              "rmsd_lower_bound": 2.4,
+              "rmsd_upper_bound": 3.8
+            }
+          ],
+          "admet": {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "molecular_weight": 405.6,
+            "logP": 5.17,
+            "h_bond_donors": 2,
+            "h_bond_acceptors": 5,
+            "tpsa": 82.5,
+            "rotatable_bonds": 3,
+            "lipinski_violations": 1,
+            "passes_lipinski": true,
+            "herg_inhibition_probability": 0.8,
+            "herg_risk_tier": "High",
+            "passes_cardiac_safety": false
+          },
+          "composite_score": 36.25,
+          "rank": 4
+        }
+      ],
+      "top_lead": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "compound_id": "DRUG-ADRB1-02",
+        "name": "Atenolol",
+        "smiles": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+        "target_gene": "ADRB1",
+        "target_uniprot_id": "P08588",
+        "pocket_id": 2,
+        "binding_affinity_kcal_mol": -12.5,
+        "poses": [
+          {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "mode": 1,
+            "affinity_kcal_mol": -12.5,
+            "rmsd_lower_bound": 0.0,
+            "rmsd_upper_bound": 0.0
+          },
+          {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "mode": 2,
+            "affinity_kcal_mol": -11.79,
+            "rmsd_lower_bound": 1.2,
+            "rmsd_upper_bound": 2.6
+          },
+          {
+            "disclaimer": "Research use only, not for clinical decisions.",
+            "mode": 3,
+            "affinity_kcal_mol": -11.17,
+            "rmsd_lower_bound": 2.4,
+            "rmsd_upper_bound": 3.8
+          }
+        ],
+        "admet": {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "molecular_weight": 270.37,
+          "logP": 1.37,
+          "h_bond_donors": 3,
+          "h_bond_acceptors": 5,
+          "tpsa": 82.5,
+          "rotatable_bonds": 2,
+          "lipinski_violations": 0,
+          "passes_lipinski": true,
+          "herg_inhibition_probability": 0.35,
+          "herg_risk_tier": "Moderate",
+          "passes_cardiac_safety": true
+        },
+        "composite_score": 91.25,
+        "rank": 1
+      }
+    }
+  ],
+  "summary_findings": [
+    "Inference detected conditions: MI, STTC",
+    "Cardiovascular Composite Risk: 52.2/100 (High Tier)",
+    "Prioritized biological targets: ADRB1",
+    "Top candidate for ADRB1: Atenolol (Vina: -12.50 kcal/mol, hERG Risk: Moderate, Score: 91.2)"
+  ]
+}

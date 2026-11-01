@@ -1,0 +1,226 @@
+{
+  "disclaimer": "Research use only, not for clinical decisions.",
+  "metadata": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "run_id": "run_aur_alpha_20261009_183138_528dbede",
+    "timestamp_utc": "2026-10-09T18:31:38.148005Z",
+    "execution_duration_sec": 1.559,
+    "model_checkpoint": "D:\\ECG-AI-Research-1Lead\\checkpoints\\best_model.pt",
+    "input_source": "C:/Users/drdev/Downloads/Single-Channel EEG Dataset for Task-Based Mental W/Single-Channel EEG Dataset for Task-Based Mental W/merged_eeg_datas_50_subjects.csv"
+  },
+  "ecg_inference": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "probabilities": {
+      "NORM": 0.0,
+      "MI": 0.0,
+      "STTC": 0.0,
+      "CD": 0.0,
+      "HYP": 0.0
+    },
+    "predictions": {
+      "NORM": false,
+      "MI": false,
+      "STTC": false,
+      "CD": false,
+      "HYP": false
+    },
+    "detected_conditions": [],
+    "thresholds": {
+      "NORM": 0.5,
+      "MI": 0.3,
+      "STTC": 0.3,
+      "CD": 0.35,
+      "HYP": 0.25
+    },
+    "sampling_rate": 500,
+    "signal_length": 5000,
+    "device": "cuda",
+    "timestamp": "2026-10-09T18:31:38.887606Z",
+    "metadata": {
+      "source_file": "C:\\Users\\drdev\\Downloads\\Single-Channel EEG Dataset for Task-Based Mental W\\Single-Channel EEG Dataset for Task-Based Mental W\\merged_eeg_datas_50_subjects.csv",
+      "format": ".csv",
+      "device_type": "ECG CSV / Tabular Record"
+    }
+  },
+  "analytics": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "composite_risk_score": 0.0,
+    "composite_risk_tier": "Low",
+    "condition_risks": {
+      "NORM": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "NORM",
+        "probability": 0.0,
+        "risk_score": 100.0,
+        "risk_tier": "Critical",
+        "confidence_interval": [
+          0.0,
+          0.0078
+        ],
+        "contributing_factors": [
+          "Loss of normal sinus baseline morphology"
+        ]
+      },
+      "MI": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "MI",
+        "probability": 0.0,
+        "risk_score": 0.0,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0,
+          0.0078
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Myocardial Infarction (prob: 0.000 < thresh: 0.30)"
+        ]
+      },
+      "STTC": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "STTC",
+        "probability": 0.0,
+        "risk_score": 0.0,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0,
+          0.0078
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for ST-T Segment Abnormality (prob: 0.000 < thresh: 0.30)"
+        ]
+      },
+      "CD": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "CD",
+        "probability": 0.0,
+        "risk_score": 0.0,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0,
+          0.0078
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Conduction Disturbance (prob: 0.000 < thresh: 0.35)"
+        ]
+      },
+      "HYP": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "HYP",
+        "probability": 0.0,
+        "risk_score": 0.0,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0,
+          0.0078
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Ventricular Hypertrophy (prob: 0.000 < thresh: 0.25)"
+        ]
+      }
+    },
+    "explainability": {
+      "disclaimer": "Research use only, not for clinical decisions.",
+      "method": "integrated_gradients",
+      "baseline": "zero",
+      "saliency_energy": 1391.1637,
+      "top_salient_intervals": [
+        [
+          1188,
+          1288
+        ],
+        [
+          1133,
+          1233
+        ],
+        [
+          519,
+          619
+        ],
+        [
+          569,
+          669
+        ],
+        [
+          211,
+          311
+        ]
+      ],
+      "segment_attributions": [
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "QRS_complex",
+          "start_sample": 261,
+          "end_sample": 306,
+          "attribution_score": 892.10104,
+          "relative_contribution_pct": 64.13,
+          "clinical_correlate": "Ventricular depolarization; hallmark of bundle branch blocks & LVH"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "ST_segment",
+          "start_sample": 306,
+          "end_sample": 356,
+          "attribution_score": 340.06799,
+          "relative_contribution_pct": 24.44,
+          "clinical_correlate": "Ventricular plateau phase; key indicator of acute ischemia/infarction"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "TP_baseline",
+          "start_sample": 0,
+          "end_sample": 5000,
+          "attribution_score": 149.49783,
+          "relative_contribution_pct": 10.75,
+          "clinical_correlate": "Electrical diastole and isoelectric baseline stability"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "PR_interval",
+          "start_sample": 221,
+          "end_sample": 261,
+          "attribution_score": 8.98074,
+          "relative_contribution_pct": 0.65,
+          "clinical_correlate": "AV nodal conduction delay; sensitive to heart blocks"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "T_wave",
+          "start_sample": 356,
+          "end_sample": 456,
+          "attribution_score": 0.51603,
+          "relative_contribution_pct": 0.04,
+          "clinical_correlate": "Ventricular repolarization; sensitive to ischemia & potassium channelopathies"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "P_wave",
+          "start_sample": 181,
+          "end_sample": 221,
+          "attribution_score": 0.0,
+          "relative_contribution_pct": 0.0,
+          "clinical_correlate": "Atrial depolarization; sensitive to atrial overload and P-mitrale"
+        }
+      ]
+    },
+    "summary_notes": [
+      "No pathological ECG conditions exceeded operating detection thresholds.",
+      "Peak physiological attribution localized to QRS_complex (64.1% of salient energy). Physiological correlate: Ventricular depolarization; hallmark of bundle branch blocks & LVH"
+    ]
+  },
+  "bridge": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "queried_conditions": [
+      "NORM"
+    ],
+    "resolved_targets": [],
+    "uniprot_ids": [],
+    "source_file": "D:\\ECG-AI-Research-1Lead\\configs\\targets.yaml"
+  },
+  "protein_structures": [],
+  "drug_screenings": [],
+  "summary_findings": [
+    "Inference detected conditions: None",
+    "Cardiovascular Composite Risk: 0.0/100 (Low Tier)",
+    "Primary morphological attribution: QRS_complex (64.1%)"
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "disclaimer": "Research use only, not for clinical decisions.",
+  "metadata": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "run_id": "run_aur_alpha_20261010_045101_a6eaddbb",
+    "timestamp_utc": "2026-10-10T04:51:01.941449Z",
+    "execution_duration_sec": 2.193,
+    "model_checkpoint": "D:\\ECG-AI-Research-1Lead\\checkpoints\\best_model.pt",
+    "input_source": "C:/Users/drdev/Downloads/HealthMonitor_ECG_0930_2250_11919.pdf"
+  },
+  "ecg_inference": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "probabilities": {
+      "NORM": 0.98167,
+      "MI": 0.01715,
+      "STTC": 0.00284,
+      "CD": 0.01153,
+      "HYP": 0.00076
+    },
+    "predictions": {
+      "NORM": true,
+      "MI": false,
+      "STTC": false,
+      "CD": false,
+      "HYP": false
+    },
+    "detected_conditions": [
+      "NORM"
+    ],
+    "thresholds": {
+      "NORM": 0.5,
+      "MI": 0.3,
+      "STTC": 0.3,
+      "CD": 0.35,
+      "HYP": 0.25
+    },
+    "sampling_rate": 500,
+    "signal_length": 5000,
+    "device": "cuda",
+    "timestamp": "2026-10-10T04:51:03.197823Z",
+    "metadata": {
+      "source_file": "C:\\Users\\drdev\\Downloads\\HealthMonitor_ECG_0930_2250_11919.pdf",
+      "format": ".pdf",
+      "device_type": "Samsung Health ECG PDF"
+    }
+  },
+  "analytics": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "composite_risk_score": 0.79,
+    "composite_risk_tier": "Low",
+    "condition_risks": {
+      "NORM": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "NORM",
+        "probability": 0.98167,
+        "risk_score": 1.83,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.9657,
+          0.9903
+        ],
+        "contributing_factors": [
+          "Baseline physiological sinus pattern"
+        ]
+      },
+      "MI": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "MI",
+        "probability": 0.01715,
+        "risk_score": 1.61,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0089,
+          0.0328
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Myocardial Infarction (prob: 0.017 < thresh: 0.30)"
+        ]
+      },
+      "STTC": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "STTC",
+        "probability": 0.00284,
+        "risk_score": 0.19,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0006,
+          0.0126
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for ST-T Segment Abnormality (prob: 0.003 < thresh: 0.30)"
+        ]
+      },
+      "CD": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "CD",
+        "probability": 0.01153,
+        "risk_score": 0.83,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0052,
+          0.0253
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Conduction Disturbance (prob: 0.012 < thresh: 0.35)"
+        ]
+      },
+      "HYP": {
+        "disclaimer": "Research use only, not for clinical decisions.",
+        "condition": "HYP",
+        "probability": 0.00076,
+        "risk_score": 0.05,
+        "risk_tier": "Low",
+        "confidence_interval": [
+          0.0001,
+          0.0091
+        ],
+        "contributing_factors": [
+          "Sub-threshold evidence for Ventricular Hypertrophy (prob: 0.001 < thresh: 0.25)"
+        ]
+      }
+    },
+    "explainability": {
+      "disclaimer": "Research use only, not for clinical decisions.",
+      "method": "integrated_gradients",
+      "baseline": "zero",
+      "saliency_energy": 122.3955,
+      "top_salient_intervals": [
+        [
+          3710,
+          3810
+        ],
+        [
+          288,
+          388
+        ],
+        [
+          4475,
+          4575
+        ],
+        [
+          640,
+          740
+        ],
+        [
+          1956,
+          2056
+        ]
+      ],
+      "segment_attributions": [
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "T_wave",
+          "start_sample": 298,
+          "end_sample": 398,
+          "attribution_score": 47.83156,
+          "relative_contribution_pct": 39.08,
+          "clinical_correlate": "Ventricular repolarization; sensitive to ischemia & potassium channelopathies"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "QRS_complex",
+          "start_sample": 203,
+          "end_sample": 248,
+          "attribution_score": 35.03998,
+          "relative_contribution_pct": 28.63,
+          "clinical_correlate": "Ventricular depolarization; hallmark of bundle branch blocks & LVH"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "PR_interval",
+          "start_sample": 163,
+          "end_sample": 203,
+          "attribution_score": 12.54472,
+          "relative_contribution_pct": 10.25,
+          "clinical_correlate": "AV nodal conduction delay; sensitive to heart blocks"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "TP_baseline",
+          "start_sample": 0,
+          "end_sample": 5000,
+          "attribution_score": 12.10056,
+          "relative_contribution_pct": 9.89,
+          "clinical_correlate": "Electrical diastole and isoelectric baseline stability"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "ST_segment",
+          "start_sample": 248,
+          "end_sample": 298,
+          "attribution_score": 10.12966,
+          "relative_contribution_pct": 8.28,
+          "clinical_correlate": "Ventricular plateau phase; key indicator of acute ischemia/infarction"
+        },
+        {
+          "disclaimer": "Research use only, not for clinical decisions.",
+          "segment_name": "P_wave",
+          "start_sample": 123,
+          "end_sample": 163,
+          "attribution_score": 5.60083,
+          "relative_contribution_pct": 4.58,
+          "clinical_correlate": "Atrial depolarization; sensitive to atrial overload and P-mitrale"
+        }
+      ]
+    },
+    "summary_notes": [
+      "No pathological ECG conditions exceeded operating detection thresholds.",
+      "Peak physiological attribution localized to T_wave (39.1% of salient energy). Physiological correlate: Ventricular repolarization; sensitive to ischemia & potassium channelopathies"
+    ]
+  },
+  "bridge": {
+    "disclaimer": "Research use only, not for clinical decisions.",
+    "queried_conditions": [
+      "NORM"
+    ],
+    "resolved_targets": [],
+    "uniprot_ids": [],
+    "source_file": "D:\\ECG-AI-Research-1Lead\\configs\\targets.yaml"
+  },
+  "protein_structures": [],
+  "drug_screenings": [],
+  "summary_findings": [
+    "Inference detected conditions: NORM",
+    "Cardiovascular Composite Risk: 0.79/100 (Low Tier)",
+    "Primary morphological attribution: T_wave (39.1%)"
+  ]
+}
